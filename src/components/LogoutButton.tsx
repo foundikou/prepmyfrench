@@ -16,7 +16,7 @@ export default function LogoutButton() {
 
   return (
     <button className="btn btn-ghost" onClick={logout} disabled={loading}>
-      {loading ? "Signing out..." : "Log out"}
+      {loading ? "Déconnexion..." : "Se déconnecter"}
     </button>
   );
 }

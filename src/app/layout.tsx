@@ -1,42 +1,16 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { getSession } from "@/lib/session";
-import LogoutButton from "@/components/LogoutButton";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PrepMyFrench",
-  description: "Prepare for the TCF Canada with practice exams and expert feedback.",
+  title: "PrepMyFrench — Préparez votre TCF Canada",
+  description:
+    "Examens blancs chronométrés, corrections détaillées et entraînement interactif pour réussir le TCF Canada.",
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const session = await getSession();
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <header className="nav">
-          <Link href="/" className="logo">
-            Prep<span>MyFrench</span>
-          </Link>
-          <nav className="nav-links">
-            {session ? (
-              <>
-                <Link href="/dashboard">Dashboard</Link>
-                <LogoutButton />
-              </>
-            ) : (
-              <>
-                <Link href="/login">Log in</Link>
-                <Link href="/register" className="btn">
-                  Sign up
-                </Link>
-              </>
-            )}
-          </nav>
-        </header>
-        <main className="container">{children}</main>
-      </body>
+    <html lang="fr">
+      <body>{children}</body>
     </html>
   );
 }
