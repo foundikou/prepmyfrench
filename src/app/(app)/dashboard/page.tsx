@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { BookOpen, Headphones, Mic, PenTool, Sparkles, TrendingUp } from "lucide-react";
 import { getSession } from "@/lib/session";
+import { ModuleCard } from "@/components/ModuleCard";
 
 export const metadata = { title: "Tableau de bord | PrepMyFrench" };
 
@@ -85,19 +86,8 @@ export default async function DashboardPage() {
           Vos épreuves d&apos;entraînement
         </h2>
         <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {MODULES.map(({ titre, description, Icon, color }) => (
-            <article key={titre} className="card flex flex-col transition hover:-translate-y-0.5 hover:shadow-md">
-              <div
-                className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr ${color} text-white shadow`}
-              >
-                <Icon className="h-6 w-6" aria-hidden="true" />
-              </div>
-              <h3 className="text-lg font-bold">{titre}</h3>
-              <p className="mt-1 flex-1 text-sm text-muted">{description}</p>
-              <span className="mt-4 inline-block self-start rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-500">
-                Bientôt disponible
-              </span>
-            </article>
+          {MODULES.map((module) => (
+            <ModuleCard key={module.titre} {...module} />
           ))}
         </div>
       </section>

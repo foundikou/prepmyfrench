@@ -1,6 +1,6 @@
-// Applies schema.sql to the database in DATABASE_URL.
+// Applies every file in /migrations (in name order) that hasn't run yet.
 // Usage: npm run db:migrate   (reads .env.local)
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { neon } from "@neondatabase/serverless";
 
 const url = process.env.DATABASE_URL;
@@ -10,22 +10,49 @@ if (!url) {
 }
 
 const sql = neon(url);
-const raw = await readFile(new URL("../schema.sql", import.meta.url), "utf8");
+const dir = new URL("../migrations/", import.meta.url);
 
-// Remove comment lines first, then split into statements.
-const schema = raw
-  .split("\n")
-  .filter((line) => !line.trim().startsWith("--"))
-  .join("\n");
+// Tracking table: remembers which migration files were already applied.
+await sql.query(`
+  CREATE TABLE IF NOT EXISTS schema_migrations (
+    name       TEXT PRIMARY KEY,
+    applied_at TIMESTAMPTZ NOT NULL DEFAULT now()
+  )
+`);
 
-const statements = schema
-  .split(";")
-  .map((s) => s.trim())
-  .filter(Boolean);
+const applied = new Set(
+  (await sql.query("SELECT name FROM schema_migrations")).map((r) => r.name)
+);
 
-for (const statement of statements) {
-  await sql.query(statement);
+const files = (await readdir(dir)).filter((f) => f.endsWith(".sql")).sort();
+
+let count = 0;
+for (const file of files) {
+  if (applied.has(file)) continue;
+
+  const raw = await readFile(new URL(file, dir), "utf8");
+
+  // Remove comment lines first, then split into statements.
+  const statements = raw
+    .split("\n")
+    .filter((line) => !line.trim().startsWith("--"))
+    .join("\n")
+    .split(";")
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  try {
+    // One transaction per file: all statements succeed or none are applied.
+    await sql.transaction([
+      ...statements.map((s) => sql.query(s)),
+      sql.query("INSERT INTO schema_migrations (name) VALUES ($1)", [file]),
+    ]);
+    console.log(`applied ${file} (${statements.length} statements)`);
+    count++;
+  } catch (err) {
+    console.error(`FAILED ${file}: ${err.message}`);
+    process.exit(1);
+  }
 }
 
-const [{ now }] = await sql`SELECT now() AS now`;
-console.log(`Migration applied (${statements.length} statements). Database time: ${now}`);
+console.log(count === 0 ? "Nothing to apply, database is up to date." : `Done, ${count} migration(s) applied.`);
