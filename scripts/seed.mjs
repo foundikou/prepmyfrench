@@ -17,9 +17,9 @@ const exam = {
   questions: [
     {
       level: "A1",
-      prompt: "Je m'appelle Karim. J'habite à Montréal depuis deux ans. Où habite Karim ?",
+      prompt: "Je m'appelle Maahir. J'habite à Douala depuis deux ans. Où habite Karim ?",
       options: ["À Paris", "À Montréal", "À Douala", "À Québec"],
-      correct: 1,
+      correct: 2,
     },
     {
       level: "A2",
