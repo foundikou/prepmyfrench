@@ -1,0 +1,514 @@
+{
+  "examId": 1,
+  "title": "TCF Canada - Compréhension Écrite (Examen 1)",
+  "durationMinutes": 60,
+  "questions": [
+    {
+      "position": 1,
+      "level": "A1",
+      "documentText": "Je m’appelle Maahir et je suis le fils de Moctar",
+      "questionText": "Comment s’appelle le père de Maahir ?",
+      "options": [
+        "FOUNDIKOU.",
+        "MOHHAMMAD.",
+        "MOCTAR",
+        "ABBAS."
+      ],
+      "correct": 2
+    },
+    {
+      "position": 2,
+      "level": "A1",
+      "documentText": "Objet : Réunion reportée\nBonjour à tous, la réunion de 14h est déplacée à 16h dans la même salle.",
+      "questionText": "À quelle heure aura lieu la réunion ?",
+      "options": [
+        "À 14 heures.",
+        "À 15 heures.",
+        "À 16 heures.",
+        "À 17 heures."
+      ],
+      "correct": 2
+    },
+    {
+      "position": 3,
+      "level": "A1",
+      "documentText": "Recherche colocataire\nChambre meublée de 12 m² dans grand appartement lumineux. Proche métro. 450 € charges comprises.",
+      "questionText": "Quel est le montant du loyer incluant les charges ?",
+      "options": [
+        "400 euros.",
+        "450 euros.",
+        "500 euros.",
+        "12 euros."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 4,
+      "level": "A1",
+      "documentText": "Salut Léa, je suis coincé dans les bouchons sur le périphérique. Je serai en retard d'un quart d'heure environ. Ne m'attends pas pour commander.",
+      "questionText": "Que demande l'expéditeur à Léa ?",
+      "options": [
+        "De l'attendre pour manger.",
+        "De commander sans l'attendre.",
+        "De venir le chercher sur le périphérique.",
+        "D'annuler la réservation."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 5,
+      "level": "A1",
+      "documentText": "Situé au cœur de la vieille ville, ce musée abrite une collection unique de peintures impressionnistes. Ouvert du mardi au dimanche de 10h à 18h. Fermé le lundi.",
+      "questionText": "Quand le musée est-il fermé au public ?",
+      "options": [
+        "Le dimanche.",
+        "Le mardi.",
+        "Le samedi.",
+        "Le lundi."
+      ],
+      "correct": 3
+    },
+    {
+      "position": 6,
+      "level": "A1",
+      "documentText": "Prendre un comprimé toutes les huit heures avec un grand verre d'eau pendant les repas.",
+      "questionText": "À quelle fréquence doit-on prendre le médicament ?",
+      "options": [
+        "Une fois par jour.",
+        "Toutes les huit heures.",
+        "Toutes les quatre heures.",
+        "Deux fois par semaine."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 7,
+      "level": "A1",
+      "documentText": "Le parking souterrain sera fermé pour maintenance électrique ce vendredi toute la journée.",
+      "questionText": "Que va-t-il se passer ce vendredi ?",
+      "options": [
+        "Le parking sera gratuit.",
+        "Le parking sera inaccessible.",
+        "Le parking sera agrandi.",
+        "Le parking sera ouvert la nuit."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 8,
+      "level": "A2",
+      "documentText": "Pelouse interdite du 1er mai au 30 septembre pour permettre la régénération du gazon.",
+      "questionText": "Pourquoi l'accès à la pelouse est-il restreint ?",
+      "options": [
+        "Pour organiser des concerts.",
+        "Pour laisser repousser l'herbe.",
+        "En raison de travaux de jardinage dangereux.",
+        "Pour protéger les fleurs rares."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 9,
+      "level": "A2",
+      "documentText": "Profitez de notre offre spéciale : pour deux pizzas achetées, la troisième est offerte !",
+      "questionText": "Combien de pizzas paie-t-on si on en prend trois ?",
+      "options": [
+        "Une pizza.",
+        "Deux pizzas.",
+        "Trois pizzas.",
+        "Aucune."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 10,
+      "level": "A2",
+      "documentText": "Départ : Paris Gare de Lyon - 08h15 | Arrivée : Lyon Part-Dieu - 10h12 | Voiture 12, Place 45, Seconde classe.",
+      "questionText": "Combien de temps dure approximativement le trajet ?",
+      "options": [
+        "Une heure.",
+        "Environ deux heures.",
+        "Trois heures.",
+        "Trente minutes."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 11,
+      "level": "A2",
+      "documentText": "Entrée gratuite le premier dimanche de chaque mois pour tous les visiteurs.",
+      "questionText": "Quand peut-on entrer sans payer ?",
+      "options": [
+        "Tous les dimanches.",
+        "Le premier dimanche de chaque mois.",
+        "Tous les jours fériés.",
+        "Les week-ends uniquement."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 12,
+      "level": "A2",
+      "documentText": "Bonjour, vous êtes bien chez Thomas. Je suis absent pour le moment. Laissez un message après le bip sonore, je vous rappellerai dès que possible.",
+      "questionText": "Que doit faire l'appelant après le signal sonore ?",
+      "options": [
+        "Rappeler immédiatement.",
+        "Laisser un message pour que Thomas le rappelle.",
+        "Envoyer un e-mail.",
+        "Patienter en ligne."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 13,
+      "level": "A2",
+      "documentText": "Studio lumineux, entièrement rénové, cuisine équipée, proche de toutes commodités. Idéal étudiant. Libre immédiatement.",
+      "questionText": "À qui ce logement est-il particulièrement destiné ?",
+      "options": [
+        "À une grande famille.",
+        "À des personnes âgées.",
+        "À un étudiant.",
+        "À des touristes de passage."
+      ],
+      "correct": 2
+    },
+    {
+      "position": 14,
+      "level": "B1",
+      "documentText": "Bien que plébiscité par les salariés pour sa flexibilité, le télétravail à 100 % pose la question de l'isolement social et de la perte du sentiment d'appartenance à l'entreprise.",
+      "questionText": "Quel est l'inconvénient principal soulevé dans cet extrait concernant le télétravail complet ?",
+      "options": [
+        "La baisse des revenus des employés.",
+        "L'isolement et la rupture du lien collectif.",
+        "Le manque d'outils informatiques adaptés.",
+        "L'augmentation des heures de travail."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 15,
+      "level": "B1",
+      "documentText": "Entreprise internationale recherche assistant(e) trilingue (Français, Anglais, Espagnol). Expérience exigée de 2 ans minimum dans un poste similaire. Rémunération selon profil.",
+      "questionText": "Quel profil est indispensable pour postuler ?",
+      "options": [
+        "Être débutant sans expérience.",
+        "Parler couramment trois langues spécifiques.",
+        "Vivre à l'étranger.",
+        "Posséder un diplôme en comptabilité."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 16,
+      "level": "B1",
+      "documentText": "Consommer local ne se limite pas à réduire l'empreinte carbone liée au transport ; c'est aussi un moyen de soutenir l'économie de proximité et de préserver les variétés régionales menacées de disparition.",
+      "questionText": "Selon ce texte, quel est l'un des avantages de la consommation locale ?",
+      "options": [
+        "Elle garantit des prix toujours plus bas.",
+        "Elle aide à maintenir le tissu économique local.",
+        "Elle permet de consommer des produits exotiques.",
+        "Elle élimine le besoin d'emballage."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 17,
+      "level": "B1",
+      "documentText": "Originaire d'Éthiopie, le café s'est rapidement diffusé à travers le monde arabe avant de conquérir l'Europe au XVIIe siècle, devenant le catalyseur des grands débats intellectuels dans les salons littéraires.",
+      "questionText": "Quel a été le rôle du café en Europe au XVIIe siècle ?",
+      "options": [
+        "Il était utilisé exclusivement comme médicament.",
+        "Il a servi de soutien aux discussions intellectuelles.",
+        "Il a remplacé l'eau potable dans les villes.",
+        "Il était réservé à la famille royale."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 18,
+      "level": "B1",
+      "documentText": "La 'fast fashion' repose sur un renouvellement incessant des collections à bas coût, ce qui engendre un gaspillage massif et des conditions de travail souvent indignes dans les pays de production.",
+      "questionText": "Quels problèmes majeurs pose la 'fast fashion' selon ce texte ?",
+      "options": [
+        "Un manque de créativité des stylistes.",
+        "Un gaspillage important et des conditions de travail problématiques.",
+        "Des prix trop élevés pour les consommateurs.",
+        "Des délais de livraison trop longs."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 19,
+      "level": "B1",
+      "documentText": "La sauvegarde du patrimoine linguistique passe nécessairement par l'enseignement à l'école, sans quoi la transmission intergénérationnelle, fragilisée par l'exode rural, s'interrompt définitivement.",
+      "questionText": "Selon le texte, qu'est-ce qui menace la transmission naturelle des langues régionales ?",
+      "options": [
+        "La télévision et Internet.",
+        "Le mouvement des populations des campagnes vers les villes.",
+        "La suppression des cours de français.",
+        "Le manque de livres imprimés."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 20,
+      "level": "B2",
+      "documentText": "Malgré un style d'écriture fluide et une intrigue initiale prometteuse, le roman s'essouffle à mi-parcours, enchaînant des clichés prévisibles jusqu'à une conclusion décevante.",
+      "questionText": "Quel est l'avis global de ce lecteur sur l'ouvrage ?",
+      "options": [
+        "Enthousiaste du début à la fin.",
+        "Le livre est décevant dans sa seconde moitié.",
+        "L'écriture est très difficile à lire.",
+        "La fin est originale et inattendue."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 21,
+      "level": "B2",
+      "documentText": "L'essor rapide des générateurs de texte soulève des questions éthiques fondamentales quant au droit d'auteur, dans la mesure où ces modèles sont entraînés sur des œuvres protégées sans consentement explicite.",
+      "questionText": "Quel problème juridique et éthique majeur est posé par ces technologies ?",
+      "options": [
+        "La destruction des données informatiques.",
+        "L'utilisation d'œuvres sans l'autorisation des auteurs.",
+        "La baisse du niveau scolaire des étudiants.",
+        "La surconsommation d'énergie des serveurs."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 22,
+      "level": "B2",
+      "documentText": "Durant la phase de sommeil paradoxal, l'activité cérébrale s'intensifie et les mouvements oculaires se multiplient, constituant le terreau privilégié de l'onirisme et de la mémorisation à long terme.",
+      "questionText": "Quel rôle joue le sommeil paradoxal selon ce passage ?",
+      "options": [
+        "Il ralentit totalement l'activité du cerveau.",
+        "Il favorise les rêves et la consolidation de la mémoire.",
+        "Il provoque des insomnies sévères.",
+        "Il empêche la récupération physique."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 23,
+      "level": "B2",
+      "documentText": "L'augmentation récurrente des frais bancaires dits 'de tenue de compte' pénalise injustement les ménages les plus fragiles, alors même que les services automatisés se multiplient.",
+      "questionText": "Quel est le principal reproche fait aux banques ?",
+      "options": [
+        "De fermer des agences physiques.",
+        "D'augmenter les frais de compte malgré l'automatisation.",
+        "De refuser de prêter de l'argent.",
+        "De ne pas sécuriser les paiements."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 24,
+      "level": "B2",
+      "documentText": "L'hyperconnexion professionnelle, loin de stimuler l'efficacité, favorise l'émiettement de l'attention et génère une fatigue cognitive chronique préjudiciable à la créativité.",
+      "questionText": "Quel est l'effet de l'hyperconnexion sur les travailleurs selon l'auteur ?",
+      "options": [
+        "Elle améliore la rapidité de travail.",
+        "Elle fragmente l'attention et provoque une fatigue mentale.",
+        "Elle renforce l'esprit d'équipe.",
+        "Elle facilite la prise de décision."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 25,
+      "level": "B2",
+      "documentText": "La numérisation des processus ne saurait être une simple juxtaposition d'outils informatiques ; elle requiert une transformation culturelle globale et une formation continue des équipes.",
+      "questionText": "Que faut-il pour réussir la transition numérique selon ce texte ?",
+      "options": [
+        "Acheter uniquement du matériel informatique neuf.",
+        "Changer la culture d'entreprise et former le personnel.",
+        "Réduire le nombre de salariés dans l'entreprise.",
+        "Externaliser l'ensemble des services informatiques."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 26,
+      "level": "B2",
+      "documentText": "L'artificialisation des sols urbains fragmente les habitats naturels, créant des îlots de chaleur et entravant la libre circulation de la faune sauvage.",
+      "questionText": "Quelles sont les conséquences de l'artificialisation des sols dans les villes ?",
+      "options": [
+        "La multiplication des zones forestières.",
+        "La fragmentation des habitats et des températures plus élevées.",
+        "L'extinction totale des insectes.",
+        "L'amélioration de la qualité de l'air."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 27,
+      "level": "C1",
+      "documentText": "La transition énergétique ne pourra réussir sans une refonte profonde des incitations fiscales, afin de pénaliser les comportements polluants tout en rendant les alternatives vertes accessibles aux ménages modestes.",
+      "questionText": "Que préconise cet article pour réussir la transition énergétique ?",
+      "options": [
+        "Supprimer toutes les taxes environnementales.",
+        "Une modification des taxes pour pénaliser les pollueurs et aider les foyers modestes.",
+        "Interdire totalement l'usage des voitures en ville.",
+        "Réduire les investissements dans les énergies renouvelables."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 28,
+      "level": "C1",
+      "documentText": "Il marchait d'un pas machinal, l'esprit encombré de réminiscences confuses, incapable de démêler le fil de ses souvenirs réels de celui de ses chimères d'enfant.",
+      "questionText": "Quel état d'esprit caractérise le personnage dans ce passage ?",
+      "options": [
+        "Une lucidité parfaite et un contrôle absolu.",
+        "Il est confus et peine à distinguer la réalité de son imagination.",
+        "Une colère noire envers son passé.",
+        "Une grande joie face à ses souvenirs."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 29,
+      "level": "C1",
+      "documentText": "L'artiste ne cherche pas à imiter le réel, mais à en extraire la quintessence par le prisme d'une abstraction géométrique rigoureuse et dépouillée.",
+      "questionText": "Comment se caractérise la démarche de cet artiste ?",
+      "options": [
+        "Il reproduit fidèlement la nature comme une photographie.",
+        "Il privilégie une approche géométrique épurée loin du réalisme.",
+        "Il utilise des couleurs vives sans structure géométrique.",
+        "Il peint exclusivement des portraits historiques."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 30,
+      "level": "C1",
+      "documentText": "La muséification à outrance des centres historiques urbains risque de transformer les villes en décors de carte postale dévitalisés, vidés de leurs habitants originels.",
+      "questionText": "Quel danger pèse sur les centres historiques selon cet auteur ?",
+      "options": [
+        "La destruction des monuments anciens.",
+        "La perte de vie locale et l'exclusion des résidents permanents.",
+        "L'absence de touristes pendant la période hivernale.",
+        "La hausse des coûts de rénovation des bâtiments."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 31,
+      "level": "C1",
+      "documentText": "L'accélération des innovations génétiques nous plonge dans une zone grise juridique où la puissance de manipulation du vivant précède systématiquement l'élaboration des balises éthiques.",
+      "questionText": "Quel dilemme l'auteur soulève-t-il face aux innovations génétiques ?",
+      "options": [
+        "Le manque de financements pour la recherche scientifique.",
+        "La science progresse plus vite que les règles morales et juridiques.",
+        "Le refus des citoyens de bénéficier des progrès médicaux.",
+        "L'inefficacité technologique des manipulations génétiques."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 32,
+      "level": "C1",
+      "documentText": "Le temps ne s'écoule pas comme un fleuve tranquille ; il dépose en nous des sédiments invisibles qui modifient insidieusement la texture de notre conscience au fil des ans.",
+      "questionText": "Comment l'auteur perçoit-il l'effet du temps sur l'être humain ?",
+      "options": [
+        "Comme un événement brutal et soudain.",
+        "Comme un dépôt progressif qui transforme subtilement notre esprit.",
+        "Comme un processus sans aucun impact psychologique.",
+        "Comme une illusion créée par notre mémoire."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 33,
+      "level": "C1",
+      "documentText": "La prolifération des infox (fake news) ne relève pas seulement d'un déficit d'information, mais d'une adhésion tribale à des récits alternatifs qui immunisent les individus contre le doute rationnel.",
+      "questionText": "Quel est le ressort psychologique et social de la propagation des infox selon ce texte ?",
+      "options": [
+        "L'absence totale d'accès aux sources d'information.",
+        "Une appartenance de groupe qui bloque l'esprit critique et le doute.",
+        "L'incapacité technique à lire les articles en ligne.",
+        "La volonté délibérée de tromper sciemment son entourage."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 34,
+      "level": "C2",
+      "documentText": "L'enseignement ne saurait se réduire à une simple transmission de data techniques ; il doit forger l'esprit critique pour prémunir les individus contre le dogmatisme sous toutes ses formes.",
+      "questionText": "Quel est le rôle primordial de l'éducation selon cet auteur ?",
+      "options": [
+        "Mémoriser un maximum de connaissances théoriques.",
+        "Développer l'esprit critique pour lutter contre le dogmatisme.",
+        "Préparer exclusivement à un métier technique.",
+        "Enseigner le respect absolu de l'autorité."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 35,
+      "level": "C2",
+      "documentText": "L'injonction à la 'ville intelligente' (smart city) masque parfois une marchandisation accrue de l'espace urbain au détriment de la participation citoyenne authentique.",
+      "questionText": "Quel regard critique l'auteur porte-t-il sur le concept de 'ville intelligente' ?",
+      "options": [
+        "Il la juge technologiquement insuffisante.",
+        "Il redoute qu'elle ne serve des logiques mercantiles au détriment des habitants.",
+        "Il la trouve trop coûteuse pour les finances publiques.",
+        "Il estime qu'elle ralentit le développement économique."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 36,
+      "level": "C2",
+      "documentText": "Le silence de la nuit n'était point un vide, mais une présence dense, tissée de craquements furtifs et de murmures lointains que l'obscurité amplifiait démesurément.",
+      "questionText": "Comment est décrit le silence nocturne dans ce passage ?",
+      "options": [
+        "Comme une absence totale de sensation et de mouvement.",
+        "Comme une atmosphère habitée par des sons discrets amplifiés par la nuit.",
+        "Comme une source de terreur incontrôlable.",
+        "Comme une illusion sonore créée par le vent."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 37,
+      "level": "C2",
+      "documentText": "La injonction contemporaine à l'épanouissement personnel par le travail tend à culpabiliser l'individu qui n'y trouve pas son compte, transformant une contrainte économique en échec existentiel.",
+      "questionText": "Quel piège l'auteur dénonce-t-il dans le rapport au travail moderne ?",
+      "options": [
+        "La baisse constante des salaires dans le secteur privé.",
+        "La transformation d'une obligation économique en quête personnelle culpabilisante.",
+        "Le refus des entreprises d'accorder des promotions.",
+        "L'allongement de la durée de la vie active."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 38,
+      "level": "C2",
+      "documentText": "Selon Kuhn, l'histoire des sciences ne progresse pas de manière linéaire par simple accumulation de vérités, mais par ruptures paradigmatiques brutales remettant en cause les grilles de lecture antérieures.",
+      "questionText": "Comment progresse la science selon la théorie évoquée ici ?",
+      "options": [
+        "De manière lente et continue sans jamais changer d'idées.",
+        "Par des crises et des changements radicaux de cadres de pensée.",
+        "Grâce à l'accumulation exclusive de faits expérimentaux.",
+        "Sous l'impulsion unique de décisions politiques."
+      ],
+      "correct": 1
+    },
+    {
+      "position": 39,
+      "level": "C2",
+      "documentText": "Réduire un système complexe à la somme de ses parties isolées constitue une impasse méthodologique, car les interactions non linéaires génèrent des propriétés émergentes irréductibles.",
+      "questionText": "Quel écueil méthodologique l'auteur critique-t-il dans cet extrait ?",
+      "options": [
+        "La trop grande place accordée aux théories abstraites.",
+        "La méthode analytique réductionniste face aux systèmes complexes.",
+        "Le manque de précision des outils statistiques.",
+        "L'utilisation excessive de simulations informatiques."
+      ],
+      "correct": 1
+    }
+  ]
+}

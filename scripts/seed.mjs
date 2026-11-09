@@ -1,5 +1,7 @@
-// Inserts 5 sample TCF exams, each fully expanded to 39 questions following official difficulty levels.
+// Importe et insère les vraies questions de l'examen depuis un fichier JSON
 import { neon } from "@neondatabase/serverless";
+import fs from "fs";
+import path from "path";
 
 const url = process.env.DATABASE_URL;
 if (!url) {
@@ -9,78 +11,54 @@ if (!url) {
 
 const sql = neon(url);
 
-// Générateur de 39 questions réalistes pour la compréhension écrite TCF
-function generateTcfQuestions(examIndex) {
-  const questions = [];
-  const labels = ["A", "B", "C", "D"];
+async function main() {
+  console.log("Nettoyage des anciens examens de test...");
+  await sql.query("TRUNCATE TABLE exams RESTART IDENTITY CASCADE;");
 
-  // Définition de la structure des 39 questions par tranche de niveau
-  const structure = [
-    { count: 4, level: "A1", prefix: "A1 - Panneau ou message court" },
-    { count: 6, level: "A2", prefix: "A2 - Annonce ou consigne pratique" },
-    { count: 9, level: "B1", prefix: "B1 - Article informatif ou fait divers" },
-    { count: 10, level: "B2", prefix: "B2 - Texte argumentatif ou professionnel" },
-    { count: 6, level: "C1", prefix: "C1 - Extrait littéraire ou essai complexe" },
-    { count: 4, level: "C2", prefix: "C2 - Registre soutenu ou subtilité lexicale" },
-  ];
-
-  let pos = 1;
-  for (const block of structure) {
-    for (let i = 1; i <= block.count; i++) {
-      questions.push({
-        level: block.level,
-        // Au lieu de: `[Examen 1] Question ${pos} (${level}) : ...`
-// Utilisez simplement :
-prompt: `Question ${pos} - Panneau ou message court #${pos}. Quelle est l'interprétation correcte de ce document ?`,
-        options: [
-          `Première option hypothétique pour la question ${pos}`,
-          `Réponse correcte officielle pour la question ${pos} (Option B)`,
-          `Troisième proposition plausible pour le test`,
-          `Quatrième option incorrecte de distraction`
-        ],
-        correct: 1, // L'option d'indice 1 (B) est la bonne
-      });
-      pos++;
-    }
+  // Chemin vers le fichier JSON contenant les 39 questions
+  const jsonPath = path.join(process.cwd(), "scripts", "exam-data.json");
+  
+  if (!fs.existsSync(jsonPath)) {
+    console.error(`Fichier introuvable : ${jsonPath}. Veuillez y placer vos questions.`);
+    process.exit(1);
   }
 
-  return questions;
-}
+  const rawData = fs.readFileSync(jsonPath, "utf-8");
+  const examData = JSON.parse(rawData);
 
-const examsToSeed = [1, 2, 3, 4, 5].map((id) => ({
-  title: `TCF Canada - Compréhension écrite (Examen ${id})`,
-  skill: "comprehension_ecrite",
-  duration_minutes: 60,
-  questions: generateTcfQuestions(id),
-}));
-
-const labels = ["A", "B", "C", "D"];
-
-// Nettoyage préalable pour repartir sur une base propre avec 39 questions
-console.log("Nettoyage des anciens examens de test...");
-await sql.query("TRUNCATE TABLE exams RESTART IDENTITY CASCADE;");
-
-for (const examData of examsToSeed) {
+  // Insertion de l'examen
   const [{ id: examId }] = await sql.query(
     "INSERT INTO exams (title, skill, duration_minutes, is_published) VALUES ($1, $2, $3, true) RETURNING id",
-    [examData.title, examData.skill, examData.duration_minutes]
+    [examData.title, "comprehension_ecrite", examData.durationMinutes]
   );
 
+  const labels = ["A", "B", "C", "D"];
+
   try {
-    for (const [i, q] of examData.questions.entries()) {
+    for (const q of examData.questions) {
+      // Combine le texte du document et la question avec le séparateur "|||"
+      const combinedPrompt = `${q.documentText}|||${q.questionText}`;
+
       const [{ id: questionId }] = await sql.query(
         "INSERT INTO questions (exam_id, position, prompt, level) VALUES ($1, $2, $3, $4) RETURNING id",
-        [examId, i + 1, q.prompt, q.level]
+        [examId, q.position, combinedPrompt, q.level]
       );
-      for (const [j, body] of q.options.entries()) {
+      
+      for (let j = 0; j < q.options.length; j++) {
+        const isCorrect = j === q.correct;
         await sql.query(
           "INSERT INTO options (question_id, label, body, is_correct) VALUES ($1, $2, $3, $4)",
-          [questionId, labels[j], body, j === q.correct]
+          [questionId, labels[j], q.options[j], isCorrect]
         );
       }
     }
-    console.log(`✅ Examen #${examId} "${examData.title}" créé avec succès (39 questions configurées).`);
+    console.log(`✅ Examen #${examId} "${examData.title}" créé avec succès avec ses 39 vraies questions.`);
   } catch (err) {
     console.error(`Erreur lors du peuplement de l'examen : ${err.message}`);
   }
 }
+
+main().catch((err) => {
+  console.error("Erreur fatale:", err);
+  process.exit(1);
+});

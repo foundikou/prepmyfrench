@@ -14,16 +14,6 @@ function formatTime(total: number) {
   return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
 }
 
-// Fonction pour nettoyer proprement le texte et masquer les préfixes techniques ([Examen 1], (A1), etc.)
-function cleanPrompt(rawPrompt: string) {
-  if (!rawPrompt) return "";
-  // Ne supprime que le préfixe [Examen X] et les redondances de niveau, mais garde "Question X"
-  return rawPrompt
-    .replace(/^\[.*?\]\s*/i, "") // Supprime "[Examen 1] "
-    .replace(/^\s*(?:A[12]|B[12]|C[12])\s*-\s*/i, "") // Supprime les redondances de type "A1 - " au début si présentes
-    .trim();
-}
-
 export function ExamRunner({ exam }: { exam: Exam }) {
   const [phase, setPhase] = useState<Phase>("intro");
   const [attemptId, setAttemptId] = useState<number | null>(null);
@@ -158,7 +148,11 @@ export function ExamRunner({ exam }: { exam: Exam }) {
         {reviewQuestions.map((q) => {
           const isAnswered = q.selectedOptionId !== null;
           const isCorrect = q.options.find((o) => o.id === q.selectedOptionId)?.isCorrect ?? false;
-          const displayPrompt = cleanPrompt(q.prompt);
+          
+          // Séparation du document et de la question
+          const parts = q.prompt ? q.prompt.split("|||") : [q.prompt, ""];
+          const documentText = parts[0] || "";
+          const questionText = parts[1] || "";
 
           return (
             <Card key={q.questionId} className="border-l-4" style={{ borderColor: isCorrect ? "#22c55e" : "#ef4444" }}>
@@ -169,10 +163,17 @@ export function ExamRunner({ exam }: { exam: Exam }) {
                 <span className="font-bold text-brand">{q.points} points</span>
               </div>
 
-              {/* Texte de lecture mis en valeur au-dessus */}
-              <div className="my-4 rounded-xl border border-line bg-slate-50 p-4 text-slate-800 leading-relaxed font-serif text-base">
-                {displayPrompt}
+              {/* 1. Bloc du Document (Fond gris neutre) */}
+              <div className="mt-4 rounded-xl border border-line bg-slate-100 p-4 text-slate-900 leading-relaxed font-serif text-base shadow-sm whitespace-pre-line">
+                {documentText}
               </div>
+
+              {/* 2. Bloc de la Question (Fond bleuté distinct) */}
+              {questionText && (
+                <div className="mt-3 rounded-xl border border-blue-200 bg-blue-50/50 p-4 text-slate-800 font-medium text-base">
+                  {questionText}
+                </div>
+              )}
 
               <div className="mt-4 grid gap-2">
                 {q.options.map((o) => {
@@ -219,7 +220,11 @@ export function ExamRunner({ exam }: { exam: Exam }) {
 
   const q = exam.questions[index];
   const isLast = index === total - 1;
-  const displayPrompt = cleanPrompt(q.prompt);
+
+  // Séparation du document et de la question par le séparateur "|||"
+  const parts = q.prompt ? q.prompt.split("|||") : [q.prompt, ""];
+  const documentText = parts[0] || "";
+  const questionText = parts[1] || "";
 
   return (
     <Card>
@@ -239,10 +244,17 @@ export function ExamRunner({ exam }: { exam: Exam }) {
         <div className="h-full bg-brand transition-all" style={{ width: `${((index + 1) / total) * 100}%` }} />
       </div>
 
-      {/* Texte de lecture ou consigne du document affiché proprement au-dessus */}
-      <div className="mt-6 rounded-xl border border-line bg-slate-50 p-4 text-slate-800 leading-relaxed font-serif text-base shadow-sm">
-        {displayPrompt}
+      {/* 1. Bloc du Document (Fond gris neutre) */}
+      <div className="mt-4 rounded-xl border border-line bg-slate-100 p-4 text-slate-900 leading-relaxed font-serif text-base shadow-sm whitespace-pre-line">
+        {documentText}
       </div>
+
+      {/* 2. Bloc de la Question (Fond bleuté distinct) */}
+      {questionText && (
+        <div className="mt-3 rounded-xl border border-blue-200 bg-blue-50/50 p-4 text-slate-800 font-medium text-base">
+          {questionText}
+        </div>
+      )}
 
       <fieldset className="mt-5 grid gap-3">
         <legend className="sr-only">Réponses possibles</legend>
